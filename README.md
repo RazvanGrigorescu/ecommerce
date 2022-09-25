@@ -1,3 +1,3 @@
 # ecommerce
 Final Project
-razvangrigorescu.github.io/ecommerce
+https://razvangrigorescu.github.io/ecommerce/
