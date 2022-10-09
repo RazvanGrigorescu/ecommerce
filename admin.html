@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="navbar-admin">
+      <div class="primary-logo-admin">
+        <a href="index.html">
+          <img src="img/logo.png" class="logo-pic-admin"
+        /></a>
+      </div>
+      <div class="cart-admin">
+        <ul class="nav-list" id="navi-list">
+          <li class="btn btn-primary">
+            <a href="cart.html"
+              ><i class="fa-sharp fa-solid fa-cart-shopping"></i> Cart</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="menu" id="toggle-button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+
+    <div class="admin-container">
+      <div class="header">
+        <h3>Gestionare produse</h3>
+        <div>
+          <button class="btn btn-primary">+ Adauga produs nou</button>
+        </div>
+      </div>
+      <div class="add-product-container">
+        <div class="add-product-header">
+          <h4>Adaugare produs nou</h4>
+          <div>
+            <button id="add-product" class="btn btn-success">Adauga</button>
+            <button class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+        <div class="add-product-form">
+          <div class="item">
+            <div class="label-item">
+              <label for="image">Imagine:</label>
+            </div>
+            <div class="input-item">
+              <input type="text" id="image" />
+            </div>
+
+            <div class="label-item">
+              <label for="name">Nume:</label>
+            </div>
+            <div class="input-item">
+              <input type="text" id="name" />
+            </div>
+            <div class="label-item">
+              <label for="description">Descriere:</label>
+            </div>
+            <div class="input-item">
+              <textarea
+                id="description"
+                name="description"
+                rows="2"
+                cols="94"
+              ></textarea>
+            </div>
+            <div class="label-item">
+              <label for="price">Pret:</label>
+            </div>
+            <div class="input-item">
+              <input type="text" id="price" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

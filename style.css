@@ -1,26 +1,27 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: black;
 }
 .logo-pic {
-  width: 100px;
-  height: 100px;
+  height: 70px;
 }
 
 .container {
+  border: 1px solid black;
   display: grid;
   grid-auto-rows: minmax(100px, auto);
   margin: 0 auto;
   grid-gap: 8px;
+  grid-template-columns: fit-content(170px) 1fr 1fr 1fr;
+
   grid-template-areas:
-    "navbar navbar navbar navbar"
-    "banner banner banner banner"
-    "sidebar main main main"
-    "footer footer footer footer";
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(4 1fr);
+    "navbar navbar navbar navbar navbar"
+    "banner banner banner banner banner"
+    "sidebar main main main main"
+    "footer footer footer footer footer";
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (max-width: 760px) {
   .container {
     display: grid;
     grid-auto-rows: minmax(100px, auto);
@@ -41,16 +42,26 @@ body {
   grid-area: navbar;
   display: flex;
   justify-content: space-around;
-  background-color: darkblue;
-  color: white;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
   align-items: center;
+  height: 90px;
+  background-color: rgb(126, 145, 121);
 }
 #banner {
   grid-area: banner;
-  background-image: url(img/Banner\ 1.jpg);
+  background-image: url(img/Indoor-Tennis-Banner.jpg);
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  border: white;
+  background-position: center;
 }
 #sidebar {
   grid-area: sidebar;
+
+  /* width: 110px; */
 }
 #main {
   grid-area: main;
@@ -60,49 +71,102 @@ body {
 }
 
 .container > * {
-  background: #3bbced;
+  background: #ffffff;
+  /* border: 1px solid black; */
   padding: 30px;
 }
 
 .nav-list {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
-  width: 100px;
-  text-align: center;
-  padding-top: 10px;
+  width: 100%;
+  text-align: end;
 }
-.nav-list .list-item {
-  display: block;
-  padding: 10px;
-  border-top: 10px;
+.nav-list .btn btn-primary {
+  display: inline;
+  padding: 10px 10px;
 }
 
 #navbar a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 #navbar a:hover {
   color: rgb(67, 112, 245);
 }
-
 .menu {
   display: none;
 }
-
 .menu-line {
   width: 20px;
   height: 3px;
   background-color: white;
   margin-bottom: 4px;
 }
-
-@media all and (max-width: 760px) {
+@media all and (max-width: 480px) {
   #navbar {
     flex-direction: column;
+    position: relative;
   }
   .menu {
     display: block;
     position: absolute;
     right: 15px;
-    top: 10px;
+    top: 27px;
   }
+  #navbar .primary-logo {
+    height: 70px;
+    width: 100%;
+  }
+  .nav-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+  }
+  .nav-list .btn btn-primary,
+  btn btn-light {
+    display: block;
+    border-top: 1px solid white;
+  }
+  .primary-logo {
+    margin-left: 0px;
+  }
+  .active {
+    display: block;
+  }
+}
+.card {
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-delay: 100ms;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+}
+.card-text {
+  text-align: left;
+}
+.card-title {
+  height: 100px;
+  text-align: left;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body a {
+  width: 250px;
 }

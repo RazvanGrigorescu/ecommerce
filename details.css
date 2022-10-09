@@ -1,0 +1,29 @@
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: 40% !important;
+  align-self: center;
+}
+#navbar-details {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  height: 90px;
+  background-color: rgb(126, 145, 121);
+}
+/* #navbar-details .primary-logo {
+  height: 70px;
+  width: 100%;
+} */
+.logo-pic {
+  height: 70px;
+}
