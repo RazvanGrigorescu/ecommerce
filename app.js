@@ -68,6 +68,7 @@ const createInnerHTMLforPriceFilter = (minPrice, maxPrice) => {
     `
     )
     .join("");
+  console.log(document);
   document.getElementById("price-filter").innerHTML = innerHTMLFilsterCheckBox;
 };
 
@@ -75,7 +76,7 @@ createInnerHTMLforPriceFilter(0, 300);
 
 //Products on load
 const getProductOnIndexPage = () => {
-  fetch("https://632570b54cd1a2834c3e145e.mockapi.io/Product")
+  fetch("https://632570b54cd1a2834c3e145e.mockapi.io/Product/")
     .then((result) => result.json())
     .then((products) => {
       const productCards = products.map((product) =>
@@ -94,7 +95,7 @@ const filterByPrice = (event) => {
   const endPrice =
     event.target.previousElementSibling.textContent.split(" - ")[1];
 
-  fetch("https://632570b54cd1a2834c3e145e.mockapi.io/Product")
+  fetch("https://632570b54cd1a2834c3e145e.mockapi.io/Product/")
     .then((result) => result.json())
     .then((products) => {
       const filterByPriceProducts = products.filter(
@@ -116,22 +117,3 @@ document
   .addEventListener("click", filterByPrice);
 
 // products in Admin page
-
-const PRODUCTS_URL = "https://632570b54cd1a2834c3e145e.mockapi.io/Product";
-
-export const getProductById = async (id) => {
-  const result = await fetch(PRODUCTS_URL + id);
-  const product = await result.json();
-
-  return product;
-};
-
-export const postNewProduct = async (product) => {
-  const response = await fetch(PRODUCTS_URL, {
-    method: "POST",
-    header: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(product),
-  });
-};

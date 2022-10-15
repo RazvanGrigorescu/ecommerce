@@ -42,10 +42,13 @@
       <div class="header">
         <h3>Gestionare produse</h3>
         <div>
-          <button class="btn btn-primary">+ Adauga produs nou</button>
+          <button id="add-new-product" class="btn btn-primary">
+            + Adauga produs nou
+          </button>
         </div>
       </div>
-      <div class="add-product-container">
+      <div class="add-product-message hidden"></div>
+      <div class="add-product-container hidden">
         <div class="add-product-header">
           <h4>Adaugare produs nou</h4>
           <div>
@@ -87,6 +90,20 @@
             </div>
           </div>
         </div>
+      </div>
+      <div id="product-list">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="row">#</th>
+              <td>Images</td>
+              <td>Product description</td>
+              <td>Price $</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="products-table-body"></tbody>
+        </table>
       </div>
     </div>
     <script type="module" src="admin.js"></script>
