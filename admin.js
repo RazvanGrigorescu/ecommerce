@@ -20,7 +20,7 @@ const populateProductsTable = async () => {
       (product, index) =>
         `<tr>
        <th scope="row">${index + 1}</th>
-       <td><img src=${product.image} width="50" height="50"></td>
+       <td><img src="${product.image}" width="50" height="50"></td>
        <td>${product.name}</td>
        <td>${product.price}</td>
        <td>

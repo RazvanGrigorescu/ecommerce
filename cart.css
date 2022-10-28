@@ -1,0 +1,33 @@
+#navbar {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  height: 90px;
+  background-color: rgb(126, 145, 121);
+}
+
+.logo-pic {
+  height: 70px;
+}
+.nav-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  text-align: end;
+}
+.nav-list .btn btn-primary {
+  display: inline;
+  padding: 10px 10px;
+}
+
+#navbar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+#navbar a:hover {
+  color: rgb(0, 0, 0);
+}

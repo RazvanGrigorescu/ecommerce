@@ -46,11 +46,11 @@ body {
   color: rgb(0, 0, 0);
   align-items: center;
   height: 90px;
-  background-color: rgb(126, 145, 121);
+  background-color: #89cff0;
 }
 #banner {
   grid-area: banner;
-  background-image: url(img/Indoor-Tennis-Banner.jpg);
+  background-image: url(img/pano.jpg);
   height: 450px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -92,9 +92,7 @@ body {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-#navbar a:hover {
-  color: rgb(67, 112, 245);
-}
+
 .menu {
   display: none;
 }
@@ -146,7 +144,6 @@ body {
 
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition-delay: 100ms;
 }
 
 .productList {
