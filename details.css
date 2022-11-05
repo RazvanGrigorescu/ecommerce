@@ -14,16 +14,32 @@
   grid-area: navbar;
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   color: rgb(0, 0, 0);
   align-items: center;
   height: 90px;
-  background-color: rgb(126, 145, 121);
+  background-color: #89cff0;
+  margin-bottom: 10px;
 }
-/* #navbar-details .primary-logo {
-  height: 70px;
-  width: 100%;
-} */
+
 .logo-pic {
   height: 70px;
+}
+.nav-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  text-align: end;
+}
+.nav-list .btn btn-primary {
+  display: inline;
+  padding: 10px 10px;
+}
+#navbar-details a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+#navbar-details a:hover {
+  color: rgb(0, 0, 0);
 }

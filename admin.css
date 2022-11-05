@@ -1,13 +1,13 @@
 #navbar-admin {
   width: 80%;
-  margin-left: 190px;
+  margin-left: 3vh;
   grid-area: navbar;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   border: 1px solid black;
   color: rgb(0, 0, 0);
   align-items: center;
-  height: 90px;
+  height: 20vh;
   background-color: #89cff0;
 }
 
@@ -25,10 +25,10 @@
 .nav-list .btn btn-primary {
   display: inline;
   padding: 10px 10px;
-  margin-left: 150px;
 }
 .nav-button {
-  margin-left: 1200px;
+  margin-left: 200vh;
+  display: flex;
 }
 
 #navbar-admin a {
@@ -40,7 +40,8 @@
   margin-top: 15px;
 }
 
-.add-product-container {
+.add-product-container,
+.edit-product-container {
   margin-top: 2%;
   border: 2px solid gray;
   border-radius: 5px;
@@ -50,18 +51,21 @@
 }
 
 .admin-container .header,
-.admin-container .add-product-header {
+.admin-container .add-product-header,
+.admin-container .edit-product-header {
   display: flex;
   justify-content: space-between;
   width: 80%;
   margin-left: 11%;
 }
 
-.add-product-form {
+.add-product-form,
+.edit-product-form {
   display: flex;
   flex-direction: column;
 }
-.add-product-form .item {
+.add-product-form .item,
+.edit-product-form .item {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -70,7 +74,8 @@
   margin-left: 11%;
 }
 
-.add-product-form .item input {
+.add-product-form .item input,
+.edit-product-form .item input {
   width: 60%;
   margin-left: 9px;
 }

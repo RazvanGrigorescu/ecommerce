@@ -130,6 +130,7 @@ body {
   btn btn-light {
     display: block;
     border-top: 1px solid white;
+    
   }
   .primary-logo {
     margin-left: 0px;
@@ -167,3 +168,4 @@ body {
 .card-body a {
   width: 250px;
 }
+

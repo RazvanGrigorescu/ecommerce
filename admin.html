@@ -48,6 +48,7 @@
         </div>
       </div>
       <div class="add-product-message hidden"></div>
+      <div class="edit-product-message hidden"></div>
       <div class="add-product-container hidden">
         <div class="add-product-header">
           <h4>Adaugare produs nou</h4>
@@ -56,6 +57,7 @@
             <button class="btn btn-danger">Cancel</button>
           </div>
         </div>
+
         <div class="add-product-form">
           <div class="item">
             <div class="label-item">
@@ -63,6 +65,53 @@
             </div>
             <div class="input-item">
               <input for="image" id="image" />
+            </div>
+
+            <div class="label-item">
+              <label for="name">Nume:</label>
+            </div>
+            <div class="input-item">
+              <input type="text" id="name" />
+            </div>
+            <div class="label-item">
+              <label for="description">Descriere:</label>
+            </div>
+            <div class="input-item">
+              <textarea
+                id="description"
+                name="description"
+                rows="2"
+                cols="94"
+              ></textarea>
+            </div>
+            <div class="label-item">
+              <label for="price">Pret:</label>
+            </div>
+            <div class="input-item">
+              <input type="text" id="price" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-product-container hidden">
+        <div class="edit-product-header">
+          <h4>Editare produs</h4>
+          <div>
+            <button id="edit-product" class="btn btn-success">
+              Actualizeaza
+            </button>
+            <button class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+
+        <div class="edit-product-form">
+          <div class="item">
+            <div class="label-item">
+              <label for="image">image:</label>
+            </div>
+            <div class="input-item">
+              <input for="image" id="image" />
+              <input id="id" type="hidden" />
             </div>
 
             <div class="label-item">

@@ -32,3 +32,19 @@ export const deleteProductById = async (id) => {
 
   return response;
 };
+
+export const editProductById = async (product) => {
+  const response = await fetch(PRODUCTS_URL + product.id, {
+    method: "PUT",
+    header: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      "name": product.name,
+      "description": product.description,
+      "price": product.price,
+      "imgURL": product.imgURL,
+    }),
+  });
+  return response;
+};

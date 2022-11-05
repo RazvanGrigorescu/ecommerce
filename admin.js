@@ -2,6 +2,7 @@ import {
   postNewProduct,
   getAllPoducts,
   deleteProductById,
+  editProductById,
 } from "./products.js";
 import { showConfirmationMessage } from "./utils.js";
 
@@ -12,6 +13,19 @@ const descriptionInputElement = document.querySelector(
 );
 const priceInputElement = document.querySelector(".add-product-form #price");
 
+// Edit elements
+const editProductId = document.querySelector(".edit-product-form #id");
+const editImageInputElement = document.querySelector(
+  ".edit-product-form #image"
+);
+const editNameInputElement = document.querySelector(".edit-product-form #name");
+const editDescriptionInputElement = document.querySelector(
+  ".edit-product-form #description"
+);
+const editPriceInputElement = document.querySelector(
+  ".edit-product-form #price"
+);
+
 const populateProductsTable = async () => {
   const products = await getAllPoducts();
 
@@ -20,15 +34,17 @@ const populateProductsTable = async () => {
       (product, index) =>
         `<tr>
        <th scope="row">${index + 1}</th>
-       <td><img src="${product.image}" width="50" height="50"></td>
+       <td><img src="${product.imgURL}" width="50" height="50"></td>
        <td>${product.name}</td>
        <td>${product.price}</td>
        <td>
         <button id="${product.id}" class="btn btn-danger">
             <i class="fa-solid fa-trash-can"></i>
         </button>
-        <button class="btn btn-warning">
-           <i class="fa-solid fa-pen"></i>
+        <button class="btn btn-warning" >
+           <i class="fa-solid fa-pen" data-product='${JSON.stringify(
+             product
+           )}'></i>
         </button>
        </td>
       </tr>`
@@ -37,6 +53,10 @@ const populateProductsTable = async () => {
 
   document.getElementById("products-table-body").innerHTML = tableContent;
 };
+
+// edit products
+
+window.addEventListener;
 
 window.addEventListener("DOMContentLoaded", populateProductsTable);
 
@@ -56,7 +76,25 @@ const addProduct = async () => {
   );
 };
 
+const editProduct = async () => {
+  const product = {
+    id: editProductId.value,
+    name: editNameInputElement.value,
+    imgURL: editImageInputElement.value,
+    description: editDescriptionInputElement.value,
+    price: editPriceInputElement.value,
+  };
+
+  const response = await editProductById(product);
+  showConfirmationMessage(
+    "edit-product-message",
+    response,
+    "Produsul a fost actualizat cu succes!"
+  );
+};
+
 document.getElementById("add-product").addEventListener("click", addProduct);
+document.getElementById("edit-product").addEventListener("click", editProduct);
 
 document.getElementById("add-new-product").addEventListener("click", () => {
   document.querySelector(".add-product-container").classList.toggle("hidden");
@@ -69,6 +107,20 @@ const handleProducts = async (event) => {
     if (response.ok) {
       await populateProductsTable();
     }
+  }
+  if (event.target.classList.contains("fa-pen")) {
+    console.log("test");
+    event.target.addEventListener("click", () => {
+      document
+        .querySelector(".edit-product-container")
+        .classList.toggle("hidden");
+      var productInfo = JSON.parse(event.target.getAttribute("data-product"));
+      editProductId.value = productInfo.id;
+      editImageInputElement.value = productInfo.imgURL;
+      editNameInputElement.value = productInfo.name;
+      editPriceInputElement.value = productInfo.price;
+      editDescriptionInputElement.value = productInfo.description;
+    });
   }
 };
 

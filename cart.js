@@ -1,12 +1,7 @@
-import {
-  postNewProduct,
-  getAllPoducts,
-  deleteProductById,
-} from "./products.js";
-import { showConfirmationMessage } from "./utils.js";
+
 
 const showCartProducts = async () => {
-  const products = await getAllPoducts();
+
 
   const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -15,15 +10,16 @@ const showCartProducts = async () => {
     cart.forEach((product) => {
       total =
         total +
-        Number(product.price.replace(" Lei", "")) * product.noOfProducts;
-
-      console.log(product.price);
+        Number(
+          product.price.replace(" Lei", "").replace(" ", "").replace(",", ".")
+        ) *
+          product.noOfProducts;
     });
 
     const productCards = cart
       .map(
         (product) =>
-          `            <div class="card rounded-3 mb-4">
+          `<div class="card rounded-3 mb-4">
                 <div class="card-body p-4">
                   <div
                     class="row d-flex justify-content-between align-items-center"
@@ -51,9 +47,14 @@ const showCartProducts = async () => {
                         id="form1"
                         min="0"
                         name="quantity"
-                        value="2"
+                        value="1"
                         type="number"
                         class="form-control form-control-sm quantity"
+                        data-unitPrice="${product.price
+                          .replace(" Lei", "")
+                          .replace(" ", "")
+                          .replace(",", ".")}"
+                        data-id="${product.id}"
                       />
   
                       <button
@@ -65,12 +66,13 @@ const showCartProducts = async () => {
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h5 class="mb-0">${product.price}</h5>
+                      <h5 id="totalPrice${
+                        product.id
+                      }" class="mb-0 total-price">${product.price}</h5>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" class="text-danger"
-                        ><i class="fas fa-trash fa-lg delete"></i
-                      ></a>
+                      <button  class="text-danger deleteEvent"><i class="fas fa-trash fa-lg delete"></i>
+                      </button>                      
                     </div>
                   </div>
                 </div>
@@ -78,52 +80,86 @@ const showCartProducts = async () => {
       )
       .join("");
 
-    let totalPriceCard = `<div>TOTAL: ${total}</div>`;
+    let totalPriceCard = `<div class="total">TOTAL: ${total} Lei</div>`;
     document.querySelector(".productsInCart").innerHTML = productCards;
     document.querySelector(".totalPrice").innerHTML = totalPriceCard;
+
+    var deleteButtons = document.querySelectorAll(".deleteEvent");
+
+    deleteButtons.forEach(function (deleteBtn) {
+      console.log(deleteBtn);
+      deleteBtn.addEventListener("click", function (e) {
+        console.log("delete");
+        let tableBody = document.querySelectorAll(".productsInCart")[0];
+        let rowToDelete = e.currentTarget.parentElement.parentElement;
+        console.log(rowToDelete);
+        rowToDelete.parentElement.removeChild(rowToDelete);
+        console.log("test");
+
+        let storedCart = localStorage.getItem("cart");
+        let cart = JSON.parse(storedCart);
+        console.log("test");
+
+        //  sterg rand
+        // splice ia 2 valori: 1) indexul elementului de la indexul obtinut din tabel; 2) nr de elemente de sters
+        let rowDeletedIndex = rowToDelete.rowIndex - 1;
+
+        cart.splice(rowDeletedIndex, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        showCartProducts();
+      });
+    });
 
     let totalPrice = document.querySelectorAll(".quantity");
     totalPrice.forEach(function (input) {
       input.addEventListener("change", (event) => {
-        console.log(input.value);
+        var productid = input.getAttribute("data-id");
+        var newPrice = input.getAttribute("data-unitPrice") * input.value;
+        var priceDocument = document.getElementById("totalPrice" + productid);
+        priceDocument.innerHTML = newPrice + " Lei";
+        var totalPrices = document.querySelectorAll(".total");
+        cart.forEach((product) => {
+          total =
+            total +
+            Number(
+              product.price
+                .replace(" Lei", "")
+                .replace(" ", "")
+                .replace(",", ".")
+            ) *
+              product.noOfProducts;
+        });
+        totalPrices[0].innerHTML = "TOTAL: " + total + " Lei";
       });
     });
+
+    const updatedPrice = document.querySelector(".total-price");
+    function renderTotalPrice() {
+      let updatedPrice = 0;
+
+      cart.forEach((item) => {
+        updatedPrice += totalPrice * item.updatedPrice;
+        updatedPrice += item.updatedPrice;
+      });
+      updatedPrice.innerHTML = `<h5 class="mb-0 total-price">${updatedPrice.item}</h5>`;
+    }
   }
 };
 
 window.addEventListener("DOMContentLoaded", showCartProducts);
 
-// function updatePrice() {
-//   let finalPrice = (document.getElementById("total-price").innerHTML =
-//     productCards);
-// }
+// Show message after finishing order
+document.getElementById("message").addEventListener("click", show);
 
-// const updatedPrice = document.querySelector(".total-price");
-// const quantityOfProducts = document.getElementById("#form1");
+function show() {
+  document.getElementById("message").innerHTML =
+    "Sorry! This is not a real website";
+  document.getElementById("message").disabled = true;
 
-// function updatePriceOfTotalQuantity(event) {
-//   total.innerHTML = input.value * product.price;
-//   updatePriceOfTotalQuantity();
-// }
-
-// const newprice = quantityOfProducts.replace(
-//   "${product.price}",
-//   updatePriceOfTotalQuantity
-// );
-
-// let buyTable = () => {
-//   let total = 0;
-//   let items = 0;
-//   if (cart) {
-//     cart.forEach((item) => {
-//       total += Number(item.price) * item.items;
-//       items += item.items;
-//     });
-//   }
-//   document.querySelector(
-//     ".items"
-//   ).innerHTML = `Items: <span class="greenText">${items}</span>`;
-//   document.querySelector(
-//     ".totalPrice"
-//   ).innerHTML = `Total Price: <span class="greenText">$${total}</span>`;
-// };
+  setTimeout(function () {
+    document.getElementById("message").innerHTML = "Proceed to Pay";
+    document.getElementById("message").disabled = false;
+  }, 5000);
+}
