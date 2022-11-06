@@ -46,8 +46,13 @@ body {
   color: rgb(0, 0, 0);
   align-items: center;
   height: 90px;
-  background-color: #89cff0;
+  background: hsla(113, 96%, 81%, 1);
+  background: linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", endColorstr="#11D3F3", GradientType=1 );
 }
+
 #banner {
   grid-area: banner;
   background-image: url(img/pano.jpg);
@@ -72,7 +77,6 @@ body {
 
 .container > * {
   background: #ffffff;
-  /* border: 1px solid black; */
   padding: 30px;
 }
 

@@ -19,7 +19,7 @@ const showCartProducts = async () => {
     const productCards = cart
       .map(
         (product) =>
-          `<div class="card rounded-3 mb-4">
+          `<div class="card rounded-3 mb-4 cardStyle">
                 <div class="card-body p-4">
                   <div
                     class="row d-flex justify-content-between align-items-center"

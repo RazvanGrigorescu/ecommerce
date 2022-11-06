@@ -36,6 +36,8 @@ async function addToCart(event) {
     );
 
     const productId = urlSearchParams.get("id");
+    
+
 
     const productURL =
       "https://632570b54cd1a2834c3e145e.mockapi.io/Product/" + productId;
@@ -57,8 +59,23 @@ async function addToCart(event) {
         const productToBeAddedInCart = { ...productInfo, noOfProducts: 1 };
         cart.push(productToBeAddedInCart);
       }
-      console.log("cart =", cart.noOfProducts);
+   
     }
     if (cart.length > 0) localStorage.setItem("cart", JSON.stringify(cart));
+   
+
+
+
+    document.querySelector(".add-to-cart").style.display = "block"
+    alert("Produsul a fost adaugat in cos.")
+    setTimeout(function() {window.close()}, 1000)
+
+  
+
   }
+  
 }
+
+
+
+ 

@@ -93,12 +93,13 @@ const editProduct = async () => {
   );
 };
 
+
+
 document.getElementById("add-product").addEventListener("click", addProduct);
 document.getElementById("edit-product").addEventListener("click", editProduct);
 
 document.getElementById("add-new-product").addEventListener("click", () => {
-  document.querySelector(".add-product-container").classList.toggle("hidden");
-});
+document.querySelector(".add-product-container").classList.toggle("hidden");});
 
 const handleProducts = async (event) => {
   if (event.target.classList.contains("fa-trash-can")) {

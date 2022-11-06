@@ -1,6 +1,6 @@
 #navbar-admin {
   width: 80%;
-  margin-left: 3vh;
+  margin-left: 28vh;
   grid-area: navbar;
   display: flex;
   justify-content: space-between;
@@ -8,7 +8,15 @@
   color: rgb(0, 0, 0);
   align-items: center;
   height: 20vh;
-  background-color: #89cff0;
+  background: hsla(113, 96%, 81%, 1);
+
+background: linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", endColorstr="#11D3F3", GradientType=1 );
 }
 
 .logo-pic-admin {
@@ -27,7 +35,7 @@
   padding: 10px 10px;
 }
 .nav-button {
-  margin-left: 200vh;
+  margin-left: 190vh;
   display: flex;
 }
 
@@ -109,4 +117,8 @@
   width: 80%;
   margin: auto;
   margin-top: 14px;
+}
+
+.cardBody{
+  background-color: blue;
 }
