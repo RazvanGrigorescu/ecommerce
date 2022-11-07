@@ -7,31 +7,18 @@ toggleButton.addEventListener("click", () => {
   naviList.classList.toggle("active");
 });
 
-// create card products
-
-// const createCardFromProduct = (product) => {
-//   return `<div class='card'>
-//         <h5> ${product.name}</h5>
-//         <img src='${product.imgURL}' />
-//         <p>${product.price}</p>
-//         <a class=" btn btn-primary" href="details.html?id=${product.id}">Details</a>
-//     </div>`;
-// };
-
 const createCardFromProduct = (product) => {
-  return `<div class='card' style="width: 17rem;">
+  return `<div class='card' style="width: 16rem;">
           <img class="card-img-top" src="${product.imgURL}" alt="Card image cap">
           <div class="card-body">
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text">${product.price}</p>
           <a href="details.html?id=${product.id}" class="btn btn-primary">Details</a>
         </div>
-      </div> 
-        `;
+      </div>`;
 };
 
 // products filter
-
 const createFilsterItemsArray = (minPrice, maxPrice) => {
   const filterInterval = (maxPrice - minPrice) / 5;
 
@@ -116,4 +103,4 @@ document
   .getElementById("price-filter")
   .addEventListener("click", filterByPrice);
 
-// products in Admin page
+

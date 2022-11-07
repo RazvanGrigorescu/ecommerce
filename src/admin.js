@@ -125,6 +125,4 @@ const handleProducts = async (event) => {
   }
 };
 
-document
-  .getElementById("product-list")
-  .addEventListener("click", handleProducts);
+document.getElementById("product-list").addEventListener("click", handleProducts);

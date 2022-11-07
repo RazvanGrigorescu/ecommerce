@@ -1,51 +1,62 @@
+body{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 #navbar-admin {
-  width: 80%;
-  margin-left: 28vh;
-  grid-area: navbar;
+  margin-left: 180px;
+  margin-right: 180px;
   display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
+  justify-content:space-between;
+  align-items: flex-end;
   color: rgb(0, 0, 0);
+  border-radius: 9px;
   align-items: center;
-  height: 20vh;
+  height: 90px;
   background: hsla(113, 96%, 81%, 1);
+  background: linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", endColorstr="#11D3F3", GradientType=1 );
+  margin-bottom: 10px;
+}
 
-background: linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
+#navbar-admin div{
+  display: flex;
+  justify-content: space-around;
+ }
 
-background: -moz-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
-
-background: -webkit-linear-gradient(90deg, hsla(113, 96%, 81%, 1) 0%, hsla(188, 90%, 51%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", endColorstr="#11D3F3", GradientType=1 );
+.cart-admin{
+  width: 350%;
 }
 
 .logo-pic-admin {
   height: 70px;
 }
 
+.nav-button{
+  margin-top: 10px;
+}
+
+
 .nav-list {
-  padding: 0;
-  margin: 0;
+  margin-right: 10px;
   list-style-type: none;
   width: 100%;
   text-align: end;
 }
-.nav-list .btn btn-primary {
-  display: inline;
-  padding: 10px 10px;
-}
-.nav-button {
-  margin-left: 190vh;
-  display: flex;
+
+.table{
+  background-color: azure;
+  }
+#product-list .thead{
+  margin-bottom: 20px;
 }
 
 #navbar-admin a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
-}
-
-.header {
-  margin-top: 15px;
 }
 
 .add-product-container,
@@ -65,6 +76,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", en
   justify-content: space-between;
   width: 80%;
   margin-left: 11%;
+  color: white;
 }
 
 .add-product-form,
@@ -93,6 +105,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", en
 
 .label-item {
   margin-top: 10px;
+  color: white;
 }
 
 .hidden {

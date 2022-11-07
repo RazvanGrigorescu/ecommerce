@@ -80,30 +80,23 @@ const showCartProducts = async () => {
       )
       .join("");
 
-    let totalPriceCard = `<div class="total">TOTAL: ${total} Lei</div>`;
-    document.querySelector(".productsInCart").innerHTML = productCards;
-    document.querySelector(".totalPrice").innerHTML = totalPriceCard;
+let totalPriceCard = `<div class="total">TOTAL: ${total} Lei</div>`;
+document.querySelector(".productsInCart").innerHTML = productCards;
+document.querySelector(".totalPrice").innerHTML = totalPriceCard;
 
-    var deleteButtons = document.querySelectorAll(".deleteEvent");
+var deleteButtons = document.querySelectorAll(".deleteEvent");
 
-    deleteButtons.forEach(function (deleteBtn) {
-      console.log(deleteBtn);
-      deleteBtn.addEventListener("click", function (e) {
-        console.log("delete");
-        let tableBody = document.querySelectorAll(".productsInCart")[0];
-        let rowToDelete = e.currentTarget.parentElement.parentElement;
-        console.log(rowToDelete);
-        rowToDelete.parentElement.removeChild(rowToDelete);
-        console.log("test");
+  deleteButtons.forEach(function (deleteBtn) {
+     console.log(deleteBtn);
+     deleteBtn.addEventListener("click", function (e) {
+      let tableBody = document.querySelectorAll(".productsInCart")[0];
+      let rowToDelete = e.currentTarget.parentElement.parentElement;
+          rowToDelete.parentElement.removeChild(rowToDelete);
+        
 
-        let storedCart = localStorage.getItem("cart");
-        let cart = JSON.parse(storedCart);
-        console.log("test");
-
-        //  sterg rand
-        // splice ia 2 valori: 1) indexul elementului de la indexul obtinut din tabel; 2) nr de elemente de sters
-        let rowDeletedIndex = rowToDelete.rowIndex - 1;
-
+      let storedCart = localStorage.getItem("cart");
+      let cart = JSON.parse(storedCart);
+      let rowDeletedIndex = rowToDelete.rowIndex - 1;
         cart.splice(rowDeletedIndex, 1);
 
         localStorage.setItem("cart", JSON.stringify(cart));

@@ -1,5 +1,9 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .logo-pic {
@@ -39,10 +43,11 @@ body {
 }
 
 #navbar {
+  z-index: 100;
   grid-area: navbar;
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
+  border-radius: 9px;
   color: rgb(0, 0, 0);
   align-items: center;
   height: 90px;
@@ -56,17 +61,17 @@ body {
 #banner {
   grid-area: banner;
   background-image: url(img/pano.jpg);
-  height: 450px;
+  height: 500px;
+  margin-top: -80px;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: white;
   border: white;
   background-position: center;
+  
 }
 #sidebar {
   grid-area: sidebar;
-
-  /* width: 110px; */
 }
 #main {
   grid-area: main;
@@ -90,11 +95,13 @@ body {
 .nav-list .btn btn-primary {
   display: inline;
   padding: 10px 10px;
+  
 }
 
 #navbar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  width: 80%;
 }
 
 .menu {
@@ -170,6 +177,6 @@ body {
 }
 
 .card-body a {
-  width: 250px;
+  width: 200px;
 }
 

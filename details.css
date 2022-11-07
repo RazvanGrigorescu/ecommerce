@@ -1,6 +1,12 @@
+body{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
 .product-details {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -14,7 +20,8 @@
   grid-area: navbar;
   display: flex;
   justify-content: space-around;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 9px;
   align-items: center;
   height: 90px;
   background: hsla(113, 96%, 81%, 1);
@@ -24,13 +31,17 @@
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ADFDA2", endColorstr="#11D3F3", GradientType=1 );
   margin-bottom: 10px;
 }
-
+.card{
+  box-shadow: rgba(118, 118, 215, 0.25) 0px 50px 100px -20px, rgba(164, 164, 164, 0.3) 0px 30px 60px -30px, rgba(29, 104, 180, 0.35) 0px -2px 6px 0px inset;
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  /* box-shadow: rgb(138, 137, 137) 0px 20px 30px -10px; */
+  /* box-shadow: rgba(179, 176, 176, 0.25) 0px 50px 100px -20px, rgba(132, 131, 131, 0.3) 0px 30px 60px -30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset; */
+}
 .logo-pic {
   height: 70px;
 }
 .nav-list {
-  padding: 0;
-  margin: 0;
+  margin-right: 10px;
   list-style-type: none;
   width: 100%;
   text-align: end;
