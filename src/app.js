@@ -8,7 +8,7 @@ toggleButton.addEventListener("click", () => {
 });
 
 const createCardFromProduct = (product) => {
-  return `<div class='card' style="width: 16rem;">
+  return `<div class='card' style="width: 13rem;">
           <img class="card-img-top" src="${product.imgURL}" alt="Card image cap">
           <div class="card-body">
           <h5 class="card-title">${product.name}</h5>

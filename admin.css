@@ -132,6 +132,7 @@ body{
   margin-top: 14px;
 }
 
-.cardBody{
-  background-color: blue;
+.admin-container{
+  color: white;
+  margin-top: 10px;
 }
