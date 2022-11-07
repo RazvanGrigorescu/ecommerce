@@ -1,4 +1,4 @@
 # ecommerce
 
 Final Project
-https://razvangrigorescu.github.io/ecommerce/
+https://razvangrigorescu.surge.sh
