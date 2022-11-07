@@ -33,9 +33,7 @@ body{
 }
 .card{
   box-shadow: rgba(118, 118, 215, 0.25) 0px 50px 100px -20px, rgba(164, 164, 164, 0.3) 0px 30px 60px -30px, rgba(29, 104, 180, 0.35) 0px -2px 6px 0px inset;
-  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
-  /* box-shadow: rgb(138, 137, 137) 0px 20px 30px -10px; */
-  /* box-shadow: rgba(179, 176, 176, 0.25) 0px 50px 100px -20px, rgba(132, 131, 131, 0.3) 0px 30px 60px -30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset; */
+ 30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset;
 }
 .logo-pic {
   height: 70px;
